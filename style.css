@@ -1,0 +1,305 @@
+:root {
+  --main-color: #aedff7;
+  --accent-color: #6ec1e4;
+  --text-color: #333;
+  --bg-color: #ffffff;
+  --font: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4fbff;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e3d49;
+  margin: 0;
+  overflow: hidden; /* prevents page scroll */
+}
+
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2378a6;
+}
+
+ul {
+  padding-left: 1.2rem;
+  text-align: left;
+}
+
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #e8f5fb; /* optional soft color */
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 0;
+  color: #555;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+nav a {
+  padding: 0.5rem 1rem;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #4ca9d8;
+}
+
+.avatar {
+  width: 100px;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+/* Carousel */
+#carousel {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  overflow-y: auto; /* ✅ allow vertical scrolling */
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.6s ease-in-out;
+}
+
+.slide.active {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.card-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-row::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.card {
+  min-width: 280px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #2378a6;
+  color: white;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  z-index: 50;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* .profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */
+
+
+@media (max-width: 768px) {
+  header {
+    position: static;
+    padding: 1rem 0.5rem;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  #carousel {
+    height: auto;
+    min-height: 50vh;
+    overflow-y: auto;
+    padding-top: 1rem;
+    display: block;
+  }
+
+  .slide {
+    padding: 1rem 0.5rem;
+  }
+
+  .card-row {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: none;
+  }
+
+  .card {
+    min-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+
+  .card h2,
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card ul,
+  .card p,
+  .card li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    position: static;
+    padding: 1rem 0.5rem;
+  }
+
+  #carousel {
+    height: auto;
+    min-height: 50vh;
+    overflow-y: auto;
+    padding-top: 1rem;
+    display: block;
+  }
+
+   .slide {
+    padding: 1rem 0.5rem;
+  }
+
+  .card-row {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: none;
+  }
+
+  .card {
+    min-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+ header {
+    padding: 1rem 0.5rem;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+
+
+ footer {
+    font-size: 0.8rem;
+    padding: 0.1rem;
+  }
+}

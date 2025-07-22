@@ -182,74 +182,8 @@ footer {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 } */
 
-
 @media (max-width: 768px) {
-  header {
-    position: static;
-    padding: 1rem 0.5rem;
-  }
-
-  .profile-img {
-    width: 100px;
-    height: 100px;
-  }
-
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  header p {
-    font-size: 0.9rem;
-  }
-
-  #carousel {
-    height: auto;
-    min-height: 50vh;
-    overflow-y: auto;
-    padding-top: 1rem;
-    display: block;
-  }
-
-  .slide {
-    padding: 1rem 0.5rem;
-  }
-
-  .card-row {
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scroll-snap-type: none;
-  }
-
-  .card {
-    min-width: 100%;
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    box-sizing: border-box;
-  }
-
-  .card h2{
-    font-size: 1.1rem;
-  }
-
-  .card ul,
-  .card p,
-  .card li {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    text-align: left;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 0.5rem;
-    text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  body, html {
+  html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -260,50 +194,77 @@ footer {
     text-align: center;
   }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.3rem;
-    margin-top: 1rem;
-  }
-
   .profile-img {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
   }
 
   #carousel {
-    display: block;
-    padding: 1rem 0.5rem;
-    margin-top: 1rem;
-    min-height: auto;
     height: auto;
+    min-height: 100vh;
+    padding: 1rem 0.5rem;
+    display: block;
     overflow-y: auto;
   }
 
   .slide {
-    min-height: auto;
+    position: static !important;
+    width: 100%;
+    opacity: 1 !important;
     padding: 1rem 0.5rem;
+    min-height: auto;
+  }
+
+  .card-row {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: none;
   }
 
   .card {
     width: 100%;
     padding: 1rem;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
     font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+  }
+
+  .card ul,
+  .card p,
+  .card li {
+    font-size: 0.9rem;
     line-height: 1.5;
     text-align: left;
   }
 
   footer {
     font-size: 0.8rem;
-    padding: 0.5rem;
-    text-align: center;
+    padding: 0.7rem;
     background-color: #1f6fb2;
     color: white;
+    text-align: center;
     position: relative;
   }
 }
